@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="pagina2.html">
+      <label for="origen">Origen:</label>
+      <input type="text" id="origen" name="origen" value="Córdoba" disabled />
+
+      <label for="destino">Destino:</label>
+      <input type="text" id="destino" name="destino" value="Mendoza" disabled />
+
+      <label for="fechaVuelo">Fecha de vuelo:</label>
+      <input
+        type="date"
+        id="fechaVuelo"
+        name="fechaVuelo"
+        value="2025-08-20"
+        disabled
+      />
+
+      <label for="horaVuelo">Hora de vuelo:</label>
+      <input
+        type="time"
+        id="horaVuelo"
+        name="horaVuelo"
+        value="10:30"
+        disabled
+      />
+
+      <label for="Selección de clase">Selección de clase</label>
+      <select name="Selección de clase" id="Selección de clase">
+        <option value="Ejecutiva">Ejecutiva</option>
+        <option value="Económica">Económica</option>
+      </select>
+
+      <input
+        type="number"
+        placeholder="mínimo 1, máximo 50"
+        min="1"
+        max="50"
+        required
+      />
+
+      <label for="Selección de Ubicación">Selección de Ubicación</label>
+      <select name="Selección de Ubicación" id="Selección de Ubicación">
+        <option value="Ventanilla">Ventanilla</option>
+        <option value="Centro">Centro</option>
+        <option value="Pasillo">Pasillo</option>
+      </select>
+
+      <label for="sillas">Selección de numero de sillas (min 1, max 50)</label>
+      <input
+        id="sillas"
+        type="number"
+        placeholder="Selección de numero de sillas (min 1, max 50)"
+        required
+      />
+
+      <label for="nombre">Nombre:</label>
+      <input type="text" name="nombre" id="nombre" maxlength="100" required />
+
+      <label for="nombre">Apellido:</label>
+      <input
+        type="text"
+        name="apellido"
+        id="apellido"
+        maxlength="100"
+        required
+      />
+
+      <label for="dni">DNI:</label>
+      <input
+        type="number"
+        name="dni"
+        id="dni"
+        min="10000000"
+        max="99999999"
+        required
+      />
+
+      <label for="nacimiento">Fecha de nacimiento:</label>
+      <input type="date" name="nacimiento" id="nacimiento" required />
+
+      <label for="sexo">Sexo:</label>
+      <input type="radio" name="sexo" id="sexo" value="masculino" />
+      <label for="masculino">Masculino</label>
+
+      <input type="radio" name="sexo" id="sexo" value="femenino" />
+      <label for="masculino">Femenino</label>
+
+      <label for="fecha">Selecciona una fecha:</label>
+      <input type="date" id="fecha" name="fecha" />
+      submit
+      <button type="submit">Aceptar</button>
+      <button type="reset">Cancelar</button>
+    </form>
+    <footer><div>Sitio Oficial de Compañía Argentina-2025</div></footer>
+  </body>
+</html>
