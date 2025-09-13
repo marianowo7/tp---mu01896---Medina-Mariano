@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/styles.css" />
     <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,7 +14,7 @@
     />
   </head>
   <body>
-    <h1>Companoa Argentina</h1>
+    <h1>Compania Argentina</h1>
     <h2>Gestion de Vuelos</h2>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
@@ -32,12 +33,12 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
+              <a class="nav-link" aria-current="page" href="pagina1.html"
                 >Registrar usuario</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pagina2.html"
+              <a class="nav-link active" href="#"
                 >Consultar vuelos disponibles/reservar</a
               >
             </li>
@@ -51,50 +52,185 @@
         </div>
       </div>
     </nav>
-
     <section>
-      <form action="pagina2.html" id="formulario-origen" class="container mt-3">
+      <form id="formulario-origen" class="container mt-3">
         <div class="row g-3">
           <div class="col-12 col-md-6">
-            <label for="origen" class="form-label">Seleccion de origen:</label>
-            <select
+            <label for="origen" class="form-label">Origen:</label>
+            <input
+              type="text"
               id="origen"
               name="origen"
-              class="form-select form-select-sm"
-              aria-label="Seleccionar origen"
-            >
-              <option selected>Seleccion de Origen</option>
-              <option value="1">Cordoba</option>
-              <option value="2">Mendoza</option>
-              <option value="3">Tucuman</option>
+              value="Cordoba"
+              class="form-control"
+            />
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="destino" class="form-label">Destino:</label>
+            <input
+              type="text"
+              id="destino"
+              name="destino"
+              value="Mendoza"
+              class="form-control"
+            />
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="fechaVuelo" class="form-label">Fecha de vuelo:</label>
+            <input
+              type="date"
+              id="fechaVuelo"
+              name="fechaVuelo"
+              value="2025-08-20"
+              class="form-control"
+            />
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="horaVuelo" class="form-label">Hora de vuelo:</label>
+            <input
+              type="time"
+              id="horaVuelo"
+              name="horaVuelo"
+              value="10:30"
+              class="form-control"
+            />
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="clase" class="form-label">Seleccion de clase</label>
+            <select name="clase" id="clase" class="form-select">
+              <option value="Ejecutiva">Ejecutiva</option>
+              <option value="Economica">Economica</option>
             </select>
           </div>
           <div class="col-12 col-md-6">
-            <label for="destino" class="form-label"
-              >Seleccion de destino:</label
+            <label for="cantidad" class="form-label">Cantidad</label>
+            <input
+              type="number"
+              id="cantidad"
+              class="form-control"
+              placeholder="minimo 1, maximo 50"
+              min="1"
+              max="50"
+              required
+            />
+          </div>
+          <div id="contenedorPasajeros" class="mt-4"></div>
+          <div class="col-12 col-md-6">
+            <label for="ubicacion" class="form-label"
+              >Seleccion de Ubicacion</label
             >
-            <select
-              id="destino"
-              name="destino"
-              class="form-select form-select-sm"
-              aria-label="Seleccionar destino"
-            >
-              <option selected>Seleccion de Destino</option>
-              <option value="1">Cordoba</option>
-              <option value="2">Mendoza</option>
-              <option value="3">Tucuman</option>
+            <select name="ubicacion" id="ubicacion" class="form-select">
+              <option value="Ventanilla">Ventanilla</option>
+              <option value="Centro">Centro</option>
+              <option value="Pasillo">Pasillo</option>
             </select>
           </div>
-        </div>
-        <div class="mt-3">
-          <label for="fecha" class="form-label">Selecciona una fecha:</label>
-          <input type="date" id="fecha" name="fecha" class="form-control" />
+          <div class="col-12 col-md-6">
+            <label for="sillas" class="form-label"
+              >Seleccion de numero de sillas (min 1, max 50)</label
+            >
+            <input
+              id="sillas"
+              type="number"
+              class="form-control"
+              placeholder="Seleccion de numero de sillas (min 1, max 50)"
+              min="1"
+              max="50"
+              required
+            />
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="nombre" class="form-label">Nombre:</label>
+            <input
+              type="text"
+              name="nombre"
+              id="nombre"
+              maxlength="100"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="apellido" class="form-label">Apellido:</label>
+            <input
+              type="text"
+              name="apellido"
+              id="apellido"
+              maxlength="100"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="dni" class="form-label">DNI:</label>
+            <input
+              type="number"
+              name="dni"
+              id="dni"
+              min="10000000"
+              max="99999999"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="nacimiento" class="form-label"
+              >Fecha de nacimiento:</label
+            >
+            <input
+              type="date"
+              name="nacimiento"
+              id="nacimiento"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="col-12">
+            <label class="form-label">Sexo:</label>
+            <div class="form-check form-check-inline">
+              <input
+                type="radio"
+                name="sexo"
+                id="masculino"
+                value="masculino"
+                class="form-check-input"
+              />
+              <label for="masculino" class="form-check-label">Masculino</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                type="radio"
+                name="sexo"
+                id="femenino"
+                value="femenino"
+                class="form-check-input"
+              />
+              <label for="femenino" class="form-check-label">Femenino</label>
+            </div>
+          </div>
         </div>
         <div class="mt-3 d-flex gap-2">
-          <button type="submit" class="btn btn-primary">Buscar</button>
+          <button
+            type="submit"
+            id="enviarDatosReservas"
+            class="btn btn-primary"
+          >
+            Aceptar
+          </button>
           <button type="reset" class="btn btn-secondary">Cancelar</button>
         </div>
       </form>
+      <h2 class="mt-5">Reservas Realizadas</h2>
+      <table id="tablaReservas" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Destino</th>
+            <th>Ubicacion</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
     </section>
 
     <footer><div>Sitio Oficial de Compania Argentina-2025</div></footer>
@@ -103,5 +239,6 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script src="javascript.js"></script>
   </body>
 </html>
