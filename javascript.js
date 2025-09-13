@@ -6,7 +6,7 @@
 // debe ser Mayor a la Fecha Actual ". Si la fecha es válida, la función debe retornar true.
 
 function validarFecha() {
-  const fechaIngresada = document.getElementById("fecha").value;
+  const fechaIngresada = document.getElementById("fechaVuelo").value;
   const fechaActual = new Date().toISOString().split("T")[0];
 
   if (fechaIngresada > fechaActual) {
